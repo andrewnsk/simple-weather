@@ -11,7 +11,7 @@ print(w)
 
 def weather_wind():
     return "Ветер: " + str(azimuth.degree(round(json.loads(json.dumps(w.get_wind()),1)['deg'])) + " " +
-                      str(round(json.loads(json.dumps(w.get_wind()))['speed'])) + " м с")
+                      str(round(json.loads(json.dumps(w.get_wind()))['speed'])) + " м/с")
 def weather_temp():
     return "Температура: " + str(round(json.loads(json.dumps(w.get_temperature('celsius')))['temp']))
 
