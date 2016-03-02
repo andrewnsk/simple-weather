@@ -1,2 +1,4 @@
 # simple-weather
-use python openweathermap module puowm
+use:
+:white_check_mark: python openweathermap module **puowm**
+:white_check_mark: and mako template
