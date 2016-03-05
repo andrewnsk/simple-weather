@@ -24,10 +24,9 @@ def degree(deg_val):
     if deg_val >= 292.6:
         if deg_val <=337.5:
             return "Северо-западный"
-        if
-        else:
+        elif deg_val <= 360:
             return "Северный"
-
-
+        else:
+            return "error value"
 
 
