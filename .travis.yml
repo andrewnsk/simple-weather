@@ -12,7 +12,8 @@ install:
   - pip install coveralls
 
 # command to run tests
-script: nosetests
-
+script:
+  nosetests
+  coverage run --source=moscowdjango,meetup manage.py test
 after_success:
   coveralls
