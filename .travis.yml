@@ -13,6 +13,7 @@ install:
 
 # command to run tests
 script:
-  nosetests
+  - nosetests
+  - coverage run main.py
 after_success:
   coveralls
