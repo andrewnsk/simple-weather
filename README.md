@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/andrewnsk/simple-weather.svg?branch=master)](https://travis-ci.org/andrewnsk/simple-weather)
+[![Code Climate](https://codeclimate.com/github/andrewnsk/simple-weather/badges/gpa.svg)](https://codeclimate.com/github/andrewnsk/simple-weather)
+[![Issue Count](https://codeclimate.com/github/andrewnsk/simple-weather/badges/issue_count.svg)](https://codeclimate.com/github/andrewnsk/simple-weather)
 # simple-weather
 =================
 use:
