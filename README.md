@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/andrewnsk/simple-weather.svg)](https://travis-ci.org/andrewnsk/simple-weather)
+[![Build Status](https://travis-ci.org/andrewnsk/simple-weather.svg?branch=master)](https://travis-ci.org/andrewnsk/simple-weather)
 # simple-weather
 =================
 use:
