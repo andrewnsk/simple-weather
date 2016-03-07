@@ -3,11 +3,12 @@ import json
 import azimuth
 
 # openweathermap API key
+# please use you own api key!
 owm = pyowm.OWM('3ede2418f1124401efcd68e5ae3bddcb')
 # Town
 observation = owm.weather_at_place('Norilsk,ru')
 w = observation.get_weather()
-print(w)
+# print(w)
 
 
 def weather_wind():
