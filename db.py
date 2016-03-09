@@ -8,12 +8,20 @@ from collect_weather import get_weather_humidity
 from collect_weather import get_weather_temperature
 from collect_weather import get_weather_wind_direction
 from collect_weather import get_weather_wind_speed
+from collect_weather import GetWeather
+
 
 # openweathermap API key
 # please use you own api key!
 owm = pyowm.OWM('3ede2418f1124401efcd68e5ae3bddcb')
 # Town
 town = "Norilsk"
+
+norilsk = GetWeather(town, '3ede2418f1124401efcd68e5ae3bddcb')
+print(norilsk.get_wind_direction())
+#print(GetWeather(town, '3ede2418f1124401efcd68e5ae3bddcb').get_wind_direction())
+
+
 observation = owm.weather_at_place('{0},ru'.format(town))
 w = observation.get_weather()
 
