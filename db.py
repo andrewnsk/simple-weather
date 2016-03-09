@@ -9,8 +9,10 @@ import azimuth
 # please use you own api key!
 owm = pyowm.OWM('3ede2418f1124401efcd68e5ae3bddcb')
 # Town
-observation = owm.weather_at_place('Norilsk,ru')
+town = "Norilsk"
+observation = owm.weather_at_place('{0},ru'.format(town))
 w = observation.get_weather()
+
 
 def local_time():
     # Текущее время и дата
@@ -21,7 +23,7 @@ def local_time():
 #           Test data
 
 db_file_name = "weather.db"
-town = "Norilsk"
+
 date_time = local_time()
 temperature = str(round(json.loads(json.dumps(w.get_temperature('celsius')))['temp']))
 humidity = int(round(json.loads(json.dumps(w.get_humidity()))))
@@ -58,4 +60,5 @@ def open_and_write_db(db_file_name_local):
 
 if not (os.path.isfile(db_file_name)):
     create_db(db_file_name)
+
 open_and_write_db(db_file_name)
