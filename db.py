@@ -4,6 +4,10 @@ import os.path
 import pyowm
 import json
 import azimuth
+from collect_weather import get_weather_humidity
+from collect_weather import get_weather_temperature
+from collect_weather import get_weather_wind_direction
+from collect_weather import get_weather_wind_speed
 
 # openweathermap API key
 # please use you own api key!
@@ -25,10 +29,10 @@ def local_time():
 db_file_name = "weather.db"
 
 date_time = local_time()
-temperature = str(round(json.loads(json.dumps(w.get_temperature('celsius')))['temp']))
-humidity = int(round(json.loads(json.dumps(w.get_humidity()))))
-wind = "{0} м/с".format(str(round(json.loads(json.dumps(w.get_wind()))['speed'])))
-wind_direction = str(azimuth.degree(round(json.loads(json.dumps(w.get_wind()), 1)['deg'])))
+temperature = get_weather_temperature()
+humidity = get_weather_humidity()
+wind = "{0} м/с".format(get_weather_wind_speed())
+wind_direction = get_weather_wind_direction()
 #############################################################################
 
 

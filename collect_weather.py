@@ -15,7 +15,7 @@ def get_weather_wind_direction():
     return str(azimuth.degree(round(json.loads(json.dumps(w.get_wind()), 1)['deg'])))
 
 
-def get_weather_wind_value():
+def get_weather_wind_speed():
     return str(round(json.loads(json.dumps(w.get_wind()))['speed']))
 
 
@@ -24,11 +24,11 @@ def get_weather_temperature():
 
 
 def get_weather_humidity():
-    return str(round(json.loads(json.dumps(w.get_humidity()))))
+    return int(round(json.loads(json.dumps(w.get_humidity()))))
 
 
 def weather_wind():
-    return "Ветер: " + get_weather_wind_direction() + " " + get_weather_wind_value() + " м/с"
+    return "Ветер: " + get_weather_wind_direction() + " " + get_weather_wind_speed() + " м/с"
 
 
 def weather_temp():
@@ -36,4 +36,4 @@ def weather_temp():
 
 
 def weather_humidity():
-    return "Влажность: " + get_weather_humidity() + " %"
+    return "Влажность: " + str(get_weather_humidity()) + " %"
