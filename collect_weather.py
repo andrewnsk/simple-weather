@@ -23,17 +23,23 @@ class GetWeather:
         self.observation = owm.weather_at_place('{0},ru'.format(self.location))
         self.w = self.observation.get_weather()
 
-    def get_wind_direction(self):
+    def wind_direction(self):
         return str(azimuth.degree(round(json.loads(json.dumps(self.w.get_wind()), 1)['deg'])))
 
-    def get_wind_speed(self):
+    def wind_speed(self):
         return str(round(json.loads(json.dumps(self.w.get_wind()))['speed']))
 
-    def get_temperature(self):
+    def temperature(self):
         return str(round(json.loads(json.dumps(self.w.get_temperature('celsius')))['temp']))
 
-    def get_humidity(self):
+    def humidity(self):
         return int(round(json.loads(json.dumps(self.w.get_humidity()))))
+
+
+class HumanWeather:
+
+    def __init__(self):
+        pass
 
 
 def get_weather_wind_direction():
