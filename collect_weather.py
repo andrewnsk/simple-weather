@@ -4,9 +4,9 @@ import azimuth
 
 # openweathermap API key
 # please use you own api key!
-api_key = '3ede2418f1124401efcd68e5ae3bddcb'
+API_KEY = '3ede2418f1124401efcd68e5ae3bddcb'
 town = "Norilsk"
-owm = pyowm.OWM(api_key)
+owm = pyowm.OWM(API_KEY)
 
 observation = owm.weather_at_place('{0},ru'.format(town))
 w = observation.get_weather()
@@ -25,6 +25,14 @@ class GetWeather:
     def get_wind_direction(self):
         return str(azimuth.degree(round(json.loads(json.dumps(self.w.get_wind()), 1)['deg'])))
 
+    def get_wind_speed(self):
+        return str(round(json.loads(json.dumps(self.w.get_wind()))['speed']))
+
+    def get_temperature(self):
+        return str(round(json.loads(json.dumps(self.w.get_temperature('celsius')))['temp']))
+
+    def get_humidity(self):
+        return int(round(json.loads(json.dumps(self.w.get_humidity()))))
 
 def get_weather_wind_direction():
     return str(azimuth.degree(round(json.loads(json.dumps(w.get_wind()), 1)['deg'])))
