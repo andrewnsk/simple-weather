@@ -16,8 +16,9 @@ from collect_weather import GetWeather
 owm = pyowm.OWM('3ede2418f1124401efcd68e5ae3bddcb')
 # Town
 town = "Norilsk"
+area = 'ru'
 
-norilsk = GetWeather(town, '3ede2418f1124401efcd68e5ae3bddcb')
+norilsk = GetWeather(town, area, '3ede2418f1124401efcd68e5ae3bddcb')
 print(norilsk.wind_direction())
 #print(GetWeather(town, '3ede2418f1124401efcd68e5ae3bddcb').wind_direction())
 

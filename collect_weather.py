@@ -6,21 +6,22 @@ import azimuth
 # please use you own api key!
 API_KEY = '3ede2418f1124401efcd68e5ae3bddcb'
 town = 'Norilsk'
-country = 'ru'
+area = 'ru'
 owm = pyowm.OWM(API_KEY)
 
-observation = owm.weather_at_place('{0},{1}'.format(town, country))
+observation = owm.weather_at_place('{0},{1}'.format(town, area))
 w = observation.get_weather()
 # print(w)
 
 
 class GetWeather:
 
-    def __init__(self, location, owm_api_key):
+    def __init__(self, location, country, owm_api_key):
         self.location = location
+        self.country = country
         self.owm_api_key = owm_api_key
         self.owm = pyowm.OWM(owm_api_key)
-        self.observation = owm.weather_at_place('{0},ru'.format(self.location))
+        self.observation = owm.weather_at_place('{0}{1},ru'.format(self.location, self.country))
         self.w = self.observation.get_weather()
 
     def wind_direction(self):
