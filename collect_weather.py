@@ -47,6 +47,10 @@ def get_weather_wind_direction():
     return str(azimuth.degree(round(json.loads(json.dumps(w.get_wind()), 1)['deg'])))
 
 
+def get_weather_wind_direction_raw():
+    return str(azimuth.degree_to_rhumb(round(json.loads(json.dumps(w.get_wind()), 1)['deg'])))
+
+
 def get_weather_wind_speed():
     return str(round(json.loads(json.dumps(w.get_wind()))['speed']))
 
