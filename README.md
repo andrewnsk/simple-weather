@@ -11,3 +11,4 @@ use:
 
 *Добавлена поддержка вывода на внешний дисплей по RS-232, через Arduino
 
+https://cloud.githubusercontent.com/assets/10822884/14765878/4e465c52-0a20-11e6-833f-1ce2b5b889c3.jpg
