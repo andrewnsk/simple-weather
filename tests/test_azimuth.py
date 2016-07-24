@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-from azimuth import degree
 import unittest
+
+from
 
 
 class TestAzimuth(unittest.TestCase):
