@@ -2,13 +2,11 @@ import sqlite3
 from datetime import datetime
 import os.path
 import pyowm
-import json
-import azimuth
-from collect_weather import get_weather_humidity
-from collect_weather import get_weather_temperature
-from collect_weather import get_weather_wind_direction
-from collect_weather import get_weather_wind_speed
-from collect_weather import GetWeather
+from .collect_weather import get_weather_humidity
+from .collect_weather import get_weather_temperature
+from .collect_weather import get_weather_wind_direction
+from .collect_weather import get_weather_wind_speed
+from .collect_weather import GetWeather
 
 
 # openweathermap API key
