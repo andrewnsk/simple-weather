@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from
+from sweather.azimuth import degree
 
 
 class TestAzimuth(unittest.TestCase):
@@ -10,3 +10,4 @@ class TestAzimuth(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+

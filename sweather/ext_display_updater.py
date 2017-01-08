@@ -42,35 +42,6 @@ observation = owm.weather_at_place('{0},{1}'.format(town, area))
 w = observation.get_weather()
 
 
-class GetWeather:
-
-    def __init__(self, location, country, owm_api_key):
-        self.location = location
-        self.country = country
-        self.owm_api_key = owm_api_key
-        self.owm = pyowm.OWM(owm_api_key)
-        self.observation = owm.weather_at_place('{0}{1},ru'.format(self.location, self.country))
-        self.w = self.observation.get_weather()
-
-    def wind_direction(self):
-        return str(degree(round(json.loads(json.dumps(self.w.get_wind()), 1)['deg'])))
-
-    def wind_speed(self):
-        return str(round(json.loads(json.dumps(self.w.get_wind()))['speed']))
-
-    def temperature(self):
-        return str(round(json.loads(json.dumps(self.w.get_temperature('celsius')))['temp']))
-
-    def humidity(self):
-        return int(round(json.loads(json.dumps(self.w.get_humidity()))))
-
-
-class HumanWeather:
-
-    def __init__(self):
-        pass
-
-
 def get_weather_wind_direction(mode=True):
     return str(degree(round(json.loads(json.dumps(w.get_wind()), 1)['deg']), mode))
 
@@ -97,56 +68,6 @@ def weather_temp():
 
 def weather_humidity():
     return "Влажность: " + str(get_weather_humidity()) + " %"
-
-
-def degree_to_rhumb(degrees):
-    """
-    convert degrees to rhumb
-    :param degrees:
-    """
-    i = int((degrees + 11.25) / 22.5)
-    result_raw = i % 16
-    return result_raw  # meteorological rhumb 1/16 of turn
-
-
-def rhumb_to_direction(rhumb):
-    """
-    return direction
-    :param rhumb:
-    """
-    directions = {0: "Северный",
-                  1: "Северо-Северо-Восточный",
-                  2: "Северо-Восточный",
-                  3: "Восточный-Северо-Восточный",
-                  4: "Восточный",
-                  5: "Восточный-Юго-Восточный",
-                  6: "Юго-Восточный",
-                  7: "Юго-Юго-Восточный",
-                  8: "Южный",
-                  9: "Юго-Юго-Западный",
-                  10: "Юго-Западный",
-                  11: "Запад-Юго-Западный",
-                  12: "Западный",
-                  13: "Западно-Северо-Западный",
-                  14: "Северо-Западный",
-                  15: "Северо-Северо-Западный"}
-    return directions[rhumb]
-
-
-def degree(deg_val, mode=True):
-    """
-    Return direction of wind
-    :param deg_val: degree value
-    :param mode:    True - return absolute direction
-                    False - return absolute direction in rhumb
-    :return:
-    """
-    if mode:
-        rhumb = degree_to_rhumb(deg_val)
-        direction = rhumb_to_direction(rhumb)
-    else:
-        direction = degree_to_rhumb(deg_val)
-    return direction
 
 
 def send_data():
