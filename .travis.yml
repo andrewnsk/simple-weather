@@ -16,6 +16,7 @@ script:
   - nosetests
 
 after_success:
-  coveralls
+  - bash <(coveralls)
   - CODECLIMATE_REPO_TOKEN=a7ccef8ae2a502a4d8f38fbfa42baee941b05e0b285ebb5db5fd5ae740a14046 codeclimate-test-reporter
+
 
